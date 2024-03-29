@@ -1,2 +1,2 @@
-# Named-Entity-Recognition-NER
+# Data Retrieval
 Natural Language Processing deals with text data.
