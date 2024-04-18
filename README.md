@@ -1,16 +1,17 @@
 Natural Language Processing deals with text data.
 
-`Pipeline`
+```Pipeline
 
-1. Data Collection:
-2. Data Storage (Raw)
-3. Data Cleansing & Preprocessing
-4. Data Storage (Processed)
+1. Data Storage (MongoDB)
+2. Data Collection (Raw_Data)
+3. Data Validation
+4. Data Storage (Preprocessed)
 5. Feature Engineering
 6. Model Building
 7. Evaluation
-8. Model Deployment-fastapi
+8. Model Deployment-flask
 9. Orchestration-prefect
+```
 
 # Topic Modeling (Text Classification) Project using NLP
 
@@ -28,7 +29,7 @@ Here's a breakdown of the key steps and findings of the project:
 
 **2. Feature Engineering:**
 
-- To prepare the text data for machine learning, I used the TF-IDF (Term Frequency-Inverse Document Frequency) vectorization technique. It converted the text data into numerical features, considering the importance of words in each article.
+- To prepare the text data for machine learning, I used the CV (Count-Vectorizer: count frequency) vectorization technique. It converted the text data into numerical features, considering the importance of words in each article.
 
 - I limited the feature set to the top 5,000 terms and removed common English stop words to improve the quality of the features.
 
@@ -36,7 +37,7 @@ Here's a breakdown of the key steps and findings of the project:
 
 - I divided the dataset into training and testing sets to evaluate the model's performance effectively.
 
-- For text classification, I employed Support Vector Machines (SVM) with different kernel functions (linear, rbf, poly, and sigmoid) to identify the best-performing model.
+- For text classification, I tried various models such as linearSVC, MultinomialNB and Support Vector Machines with different kernel functions to identify the best-performing model.
 
 - I used the linear kernel SVM as it showed the highest accuracy on the test data.
 
@@ -44,14 +45,14 @@ Here's a breakdown of the key steps and findings of the project:
 
 - I measured the model's performance using the accuracy score, which indicated the proportion of correctly classified articles.
 
-- The linear kernel SVM achieved an impressive accuracy on the test data, demonstrating its effectiveness in classifying news articles accurately.
+- The models improve accuracy on the test data, demonstrating its effectiveness in classifying news articles accurately.
 
 **5. Inference and Deployment:**
 
-- I demonstrated how the trained model could be used to classify new headlines into their respective categories. For example, I input headlines related to Elon Musk and Tom Cruise and showed that the model correctly predicted the categories of "business" and "entertainment," respectively.
+- I demonstrated how the trained model could be used to classify new headlines into their respective categories. For example, I input headlines related to business person and actor and showed that the model correctly predicted the categories of "business" and "entertainment," respectively.
 
 **6. Real-World Application:**
 
-- I highlighted the practical applications of this project, which extend beyond news categorization. Such techniques can be employed in recommendation systems, sentiment analysis, and information retrieval, among other fields.
+- I highlighted the practical applications of this project, which extend beyond news categorization. Such techniques can be employed in recommendation systems or information retrieval, among other fields.
 
 In conclusion, this project showcased the power of natural language processing and machine learning in automating the categorization of news articles. The skills and knowledge gained from this project can be applied to a wide range of applications in the field of data science and NLP. I'm excited about the possibilities that arise when harnessing the capabilities of machine learning in the world of text analysis and classification. If you have any questions or would like to learn more about this project, feel free to reach out.
