@@ -1,0 +1,4 @@
+columns:
+  -id: str
+  -text: categorical
+  -label: categorical
