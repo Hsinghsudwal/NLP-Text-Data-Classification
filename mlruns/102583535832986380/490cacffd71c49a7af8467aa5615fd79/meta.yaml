@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/sudwa/Desktop/NLP-Text-Data-Classification/mlruns/102583535832986380/490cacffd71c49a7af8467aa5615fd79/artifacts
+end_time: 1714252787394
+entry_point_name: ''
+experiment_id: '102583535832986380'
+lifecycle_stage: active
+run_id: 490cacffd71c49a7af8467aa5615fd79
+run_name: crawling-rat-74
+run_uuid: 490cacffd71c49a7af8467aa5615fd79
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714252745391
+status: 3
+tags: []
+user_id: sudwa

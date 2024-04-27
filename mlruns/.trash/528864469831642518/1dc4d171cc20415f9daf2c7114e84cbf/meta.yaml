@@ -1,0 +1,16 @@
+artifact_uri: file:///C:/Users/sudwa/Desktop/NLP-Text-Data-Classification/mlruns/528864469831642518/1dc4d171cc20415f9daf2c7114e84cbf/artifacts
+deleted_time: 1714252539540
+end_time: 1714252273543
+entry_point_name: ''
+experiment_id: '528864469831642518'
+lifecycle_stage: deleted
+run_id: 1dc4d171cc20415f9daf2c7114e84cbf
+run_name: placid-dove-532
+run_uuid: 1dc4d171cc20415f9daf2c7114e84cbf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714252236805
+status: 3
+tags: []
+user_id: sudwa

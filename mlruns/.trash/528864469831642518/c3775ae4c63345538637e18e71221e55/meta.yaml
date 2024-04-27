@@ -1,0 +1,16 @@
+artifact_uri: file:///C:/Users/sudwa/Desktop/NLP-Text-Data-Classification/mlruns/528864469831642518/c3775ae4c63345538637e18e71221e55/artifacts
+deleted_time: 1714252539540
+end_time: 1714252110663
+entry_point_name: ''
+experiment_id: '528864469831642518'
+lifecycle_stage: deleted
+run_id: c3775ae4c63345538637e18e71221e55
+run_name: serious-squid-853
+run_uuid: c3775ae4c63345538637e18e71221e55
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714252075207
+status: 3
+tags: []
+user_id: sudwa

@@ -1,0 +1,16 @@
+artifact_uri: file:///C:/Users/sudwa/Desktop/NLP-Text-Data-Classification/mlruns/528864469831642518/85c1fb080a3a41f9ade702a22eed673b/artifacts
+deleted_time: 1714252539540
+end_time: 1714252273543
+entry_point_name: ''
+experiment_id: '528864469831642518'
+lifecycle_stage: deleted
+run_id: 85c1fb080a3a41f9ade702a22eed673b
+run_name: delightful-worm-927
+run_uuid: 85c1fb080a3a41f9ade702a22eed673b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714252236805
+status: 3
+tags: []
+user_id: sudwa

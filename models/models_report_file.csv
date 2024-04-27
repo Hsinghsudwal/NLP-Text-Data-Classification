@@ -1,0 +1,9 @@
+Model,Accuracy,Precision,Recall,F1
+SVC(kernel='linear'),1.0,1.0,1.0,1.0
+LinearSVC(),1.0,1.0,1.0,1.0
+KNeighborsClassifier(),0.7870786516853933,0.7870786516853933,0.7870786516853933,0.7870786516853933
+MultinomialNB(),0.9865168539325843,0.9865168539325843,0.9865168539325843,0.9865168539325843
+"GridSearchCV(estimator=MultinomialNB(), n_jobs=-1,
+             param_grid={'alpha': [0.01, 0.1, 0.5, 1.0, 10.0],
+                         'fit_prior': [True, False]},
+             verbose=3)",0.9904494382022472,0.9904494382022472,0.9904494382022472,0.9904494382022472

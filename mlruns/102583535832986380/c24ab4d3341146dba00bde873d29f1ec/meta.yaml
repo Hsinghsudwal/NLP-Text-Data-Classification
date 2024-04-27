@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/sudwa/Desktop/NLP-Text-Data-Classification/mlruns/102583535832986380/c24ab4d3341146dba00bde873d29f1ec/artifacts
+end_time: 1714252924468
+entry_point_name: ''
+experiment_id: '102583535832986380'
+lifecycle_stage: active
+run_id: c24ab4d3341146dba00bde873d29f1ec
+run_name: burly-shrimp-401
+run_uuid: c24ab4d3341146dba00bde873d29f1ec
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714252890996
+status: 3
+tags: []
+user_id: sudwa

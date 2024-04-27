@@ -1,0 +1,9 @@
+artifact_location: file:///C:/Users/sudwa/Desktop/NLP-Text-Data-Classification/mlflow_artifacts
+creation_time: 1714250742705
+experiment_id: '258432303641577256'
+last_update_time: 1714250988923
+lifecycle_stage: deleted
+name: NaiveBayes_model
+tags:
+  NLP: Text Classification
+  version: 0.0.1

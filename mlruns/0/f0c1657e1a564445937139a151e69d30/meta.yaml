@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/sudwa/Desktop/NLP-Text-Data-Classification/mlruns/0/f0c1657e1a564445937139a151e69d30/artifacts
+end_time: 1714250783279
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f0c1657e1a564445937139a151e69d30
+run_name: unequaled-ray-363
+run_uuid: f0c1657e1a564445937139a151e69d30
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714250743763
+status: 3
+tags: []
+user_id: sudwa

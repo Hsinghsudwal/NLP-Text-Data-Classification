@@ -1,0 +1,4 @@
+columns:
+  -_id: str
+  -text: str
+  -label: str

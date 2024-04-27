@@ -1,0 +1,16 @@
+artifact_uri: file:///C:/Users/sudwa/Desktop/NLP-Text-Data-Classification/mlruns/528864469831642518/88f180b98c2f4ea3a2e08ea6aa4e9f8f/artifacts
+deleted_time: 1714252539540
+end_time: 1714252273543
+entry_point_name: ''
+experiment_id: '528864469831642518'
+lifecycle_stage: deleted
+run_id: 88f180b98c2f4ea3a2e08ea6aa4e9f8f
+run_name: calm-sow-261
+run_uuid: 88f180b98c2f4ea3a2e08ea6aa4e9f8f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714252236805
+status: 3
+tags: []
+user_id: sudwa

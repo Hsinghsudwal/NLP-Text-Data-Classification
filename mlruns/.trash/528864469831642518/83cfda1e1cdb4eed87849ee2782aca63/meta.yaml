@@ -1,0 +1,16 @@
+artifact_uri: file:///C:/Users/sudwa/Desktop/NLP-Text-Data-Classification/mlruns/528864469831642518/83cfda1e1cdb4eed87849ee2782aca63/artifacts
+deleted_time: 1714252539540
+end_time: 1714252286534
+entry_point_name: ''
+experiment_id: '528864469831642518'
+lifecycle_stage: deleted
+run_id: 83cfda1e1cdb4eed87849ee2782aca63
+run_name: NB
+run_uuid: 83cfda1e1cdb4eed87849ee2782aca63
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714252236805
+status: 3
+tags: []
+user_id: sudwa

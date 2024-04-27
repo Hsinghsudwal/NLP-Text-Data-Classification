@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/sudwa/Desktop/NLP-Text-Data-Classification/mlruns/102583535832986380/3ed2e1b926d349e699083cfb8221f60d/artifacts
+end_time: 1714252924468
+entry_point_name: ''
+experiment_id: '102583535832986380'
+lifecycle_stage: active
+run_id: 3ed2e1b926d349e699083cfb8221f60d
+run_name: nebulous-gnu-252
+run_uuid: 3ed2e1b926d349e699083cfb8221f60d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714252890996
+status: 3
+tags: []
+user_id: sudwa

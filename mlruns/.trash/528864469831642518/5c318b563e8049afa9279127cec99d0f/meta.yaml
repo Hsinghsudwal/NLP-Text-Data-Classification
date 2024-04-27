@@ -1,0 +1,16 @@
+artifact_uri: file:///C:/Users/sudwa/Desktop/NLP-Text-Data-Classification/mlruns/528864469831642518/5c318b563e8049afa9279127cec99d0f/artifacts
+deleted_time: 1714252539540
+end_time: 1714252110663
+entry_point_name: ''
+experiment_id: '528864469831642518'
+lifecycle_stage: deleted
+run_id: 5c318b563e8049afa9279127cec99d0f
+run_name: welcoming-hen-819
+run_uuid: 5c318b563e8049afa9279127cec99d0f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714252075207
+status: 3
+tags: []
+user_id: sudwa

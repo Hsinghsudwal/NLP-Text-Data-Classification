@@ -1,0 +1,34 @@
+base:
+  project_name: "NLP-Text-Classification"
+  author: "Harinder Singh Sudwal"
+
+basic:
+  random_state: 42
+  TEST_SIZE: 0.2
+  THRESHOLD: 0.05
+  FEATURE_NAME: text
+  NEW_FEATURE_NAME: clean_text
+  TARGET_COLUMN: category
+  PIPELINE_NAME: "Text-Classification"
+
+DATA_LOCATION:
+  ARTIFACT_DIR: artifacts
+  RAW_FILE_NAME: raw.csv
+  CLEAN_FILE_NAME: clean.csv
+  TRAIN_FILE_NAME: train.csv
+  TEST_FILE_NAME: test.csv
+
+  DATA_VALIDATION_DRIFT_REPORT_FILE_NAME: report.yaml
+
+  main_model_folder: models
+  countVector: vectorizer.pkl
+  model_name: model.pkl
+  clf_report_filename: classification_report.csv
+
+metrics_path:
+  metrics_folder: metrics
+  metrics_file: metrics.json
+
+SCHEMA:
+  CONFIG: config
+  SCHEMA_FILE_NAME: schema.yaml

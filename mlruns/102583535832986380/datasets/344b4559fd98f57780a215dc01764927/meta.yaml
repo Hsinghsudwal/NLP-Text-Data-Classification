@@ -1,0 +1,9 @@
+digest: '32153744'
+name: dataset
+profile: '{"features_shape": [1780, 5000], "features_size": 8900000, "features_nbytes":
+  71200000}'
+schema: '{"mlflow_tensorspec": {"features": "[{\"type\": \"tensor\", \"tensor-spec\":
+  {\"dtype\": \"int64\", \"shape\": [-1, 5000]}}]", "targets": null}}'
+source: '{"tags": {"mlflow.user": "sudwa", "mlflow.source.name": "main.py", "mlflow.source.type":
+  "LOCAL", "mlflow.source.git.commit": "4fa7edea8a80a32aac05b0cd4c93f5de29e058d2"}}'
+source_type: code

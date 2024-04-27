@@ -1,0 +1,16 @@
+artifact_uri: file:///C:/Users/sudwa/Desktop/NLP-Text-Data-Classification/mlruns/528864469831642518/9c0fdb3bc11c4c55ac3cf3618bc4c9e3/artifacts
+deleted_time: 1714252539540
+end_time: 1714252110663
+entry_point_name: ''
+experiment_id: '528864469831642518'
+lifecycle_stage: deleted
+run_id: 9c0fdb3bc11c4c55ac3cf3618bc4c9e3
+run_name: righteous-bass-750
+run_uuid: 9c0fdb3bc11c4c55ac3cf3618bc4c9e3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714252075207
+status: 3
+tags: []
+user_id: sudwa

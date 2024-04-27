@@ -1,0 +1,16 @@
+artifact_uri: file:///C:/Users/sudwa/Desktop/NLP-Text-Data-Classification/mlruns/528864469831642518/42b524286a8e4878ae3a64f8b4ba3dfd/artifacts
+deleted_time: 1714252539540
+end_time: 1714252273543
+entry_point_name: ''
+experiment_id: '528864469831642518'
+lifecycle_stage: deleted
+run_id: 42b524286a8e4878ae3a64f8b4ba3dfd
+run_name: learned-pug-819
+run_uuid: 42b524286a8e4878ae3a64f8b4ba3dfd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714252236805
+status: 3
+tags: []
+user_id: sudwa
