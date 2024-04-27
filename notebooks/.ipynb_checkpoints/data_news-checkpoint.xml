@@ -1,0 +1,1038 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.3 20210610//EN" "JATS-journalpublishing1-3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="other" dtd-version="1.3" xml:lang="en">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="publisher-id">data</journal-id>
+      <journal-title-group>
+        <journal-title>Data</journal-title>
+        <abbrev-journal-title abbrev-type="publisher">Data</abbrev-journal-title>
+        <abbrev-journal-title abbrev-type="pubmed">Data</abbrev-journal-title>
+      </journal-title-group>
+      <issn pub-type="epub">2306-5729</issn>
+      <publisher>
+        <publisher-name>MDPI</publisher-name>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="doi">10.3390/data8050074</article-id>
+      <article-id pub-id-type="publisher-id">data-08-00074</article-id>
+      <article-categories>
+        <subj-group>
+          <subject>Data Descriptor</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>MN-DS: A Multilabeled News Dataset for News Articles Hierarchical Classification</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0002-0652-6068</contrib-id>
+          <name>
+            <surname>Petukhova</surname>
+            <given-names>Alina</given-names>
+          </name>
+          <xref rid="c1-data-08-00074" ref-type="corresp">*</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0002-8487-5837</contrib-id>
+          <name>
+            <surname>Fachada</surname>
+            <given-names>Nuno</given-names>
+          </name>
+        </contrib>
+      </contrib-group>
+      <contrib-group>
+        <contrib contrib-type="editor">
+          <name>
+            <surname>Mwitondi</surname>
+            <given-names>Kassim S.</given-names>
+          </name>
+          <role>Academic Editor</role>
+        </contrib>
+      </contrib-group>
+      <aff id="af1-data-08-00074">COPELABS, Lus&#xF3;fona University, Campo Grande 376, 1749-024 Lisbon, Portugal</aff>
+      <author-notes>
+        <corresp id="c1-data-08-00074"><label>*</label>Correspondence: <email>alina.petukhova@ulusofona.pt</email></corresp>
+      </author-notes>
+      <pub-date pub-type="epub">
+        <day>23</day>
+        <month>04</month>
+        <year>2023</year>
+      </pub-date>
+      <pub-date pub-type="collection">
+        <month>05</month>
+        <year>2023</year>
+      </pub-date>
+      <volume>8</volume>
+      <issue>5</issue>
+      <elocation-id>74</elocation-id>
+      <history>
+        <date date-type="received">
+          <day>19</day>
+          <month>03</month>
+          <year>2023</year>
+        </date>
+        <date date-type="rev-recd">
+          <day>17</day>
+          <month>04</month>
+          <year>2023</year>
+        </date>
+        <date date-type="accepted">
+          <day>19</day>
+          <month>04</month>
+          <year>2023</year>
+        </date>
+      </history>
+      <permissions>
+        <copyright-statement>&#xA9; 2023 by the authors.</copyright-statement>
+        <copyright-year>2023</copyright-year>
+        <license license-type="open-access">
+          <license-p>Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license (<ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</ext-link>).</license-p>
+        </license>
+      </permissions>
+      <abstract>
+        <p>This article presents a dataset of 10,917 news articles with hierarchical news categories collected between 1 January 2019 and 31 December 2019. We manually labeled the articles based on a hierarchical taxonomy with 17 first-level and 109 second-level categories. This dataset can be used to train machine learning models for automatically classifying news articles by topic. This dataset can be helpful for researchers working on news structuring, classification, and predicting future events based on released news.</p>
+      </abstract>
+      <kwd-group>
+        <kwd>news dataset</kwd>
+        <kwd>text classification</kwd>
+        <kwd>NLP</kwd>
+        <kwd>media topic taxonomy</kwd>
+      </kwd-group>
+      <funding-group>
+        <award-group>
+          <funding-source>Funda&#xE7;&#xE3;o para a Ci&#xEA;ncia e Tecnologia</funding-source>
+          <award-id>UIDB/04111/2020</award-id>
+        </award-group>
+        <funding-statement>This research was funded by Funda&#xE7;&#xE3;o para a Ci&#xEA;ncia e Tecnologia under Project UIDB/04111/2020 (COPELABS).</funding-statement>
+      </funding-group>
+    </article-meta>
+  </front>
+  <body>
+    <sec id="sec1-data-08-00074">
+      <title>1. Background and Summary</title>
+      <p>A news dataset is a collection of news articles classified into different categories. In the past decade, there has been a sharp increase in news datasets available for analysis [<xref ref-type="bibr" rid="B1-data-08-00074">1</xref>]. These datasets can be used to understand various topics, from politics to the economy.</p>
+      <p>A few different types of news datasets are commonly used for analysis. The first is raw data, which includes all the data that a news organization collects. This data can be used to understand how a news organization operates, what stories are covered, and how they are covered. The second type of news dataset is processed data. These data have been through some processing, such as aggregation or cleaned up. Processed data are often easier to work with than raw data and can be used to answer specific questions such as providing additional information for the decision-making process. The third type of news dataset is derived data. These data are created by combining multiple datasets, often from different sources [<xref ref-type="bibr" rid="B2-data-08-00074">2</xref>]. News datasets can be used for various purposes in a machine learning context, for example:<list list-type="bullet"><list-item><p>Predicting future events based on past news articles.</p></list-item><list-item><p>Understanding the news cycle.</p></list-item><list-item><p>Determining the sentiment of news articles.</p></list-item><list-item><p>Extracting information from news articles (e.g., named entities, location, dates).</p></list-item><list-item><p>Classifying news articles into predefined categories.</p></list-item></list></p>
+      <p>To adequately answer research questions, news datasets should contain sufficient data points and span a significant enough period. There are many labeled news datasets available, each with specific limitations. For example, they may only cover a specific period or geographical area or be confined to a particular topic. Additionally, the categories may not be completely accurate, and the datasets may be biased in some way [<xref ref-type="bibr" rid="B3-data-08-00074">3</xref>,<xref ref-type="bibr" rid="B4-data-08-00074">4</xref>].</p>
+      <p>Some of the more popular news datasets include the 20 Newsgroups dataset [<xref ref-type="bibr" rid="B5-data-08-00074">5</xref>], AG&#x2019;s news topic classification dataset [<xref ref-type="bibr" rid="B6-data-08-00074">6</xref>], L33-Yahoo News dataset [<xref ref-type="bibr" rid="B7-data-08-00074">7</xref>,<xref ref-type="bibr" rid="B8-data-08-00074">8</xref>], News Category dataset [<xref ref-type="bibr" rid="B9-data-08-00074">9</xref>], and Media Cloud dataset [<xref ref-type="bibr" rid="B10-data-08-00074">10</xref>]. Each of these datasets has been used extensively by researchers in the fields of natural language processing and machine learning, and each has its advantages and disadvantages. The 20 Newsgroups dataset was created in 1997 and contains 20 different categories of news, each with a training and test set. The data is already pre-processed and tokenized, which makes it very easy to use. However, the dataset is outdated and relatively small, with only about 1000 documents in each category.</p>
+      <p>The AG&#x2019;s news topic classification dataset is a collection of news articles from the academic news search engine &#x201C;ComeToMyHead&#x201D; during more than one year of activity. Articles were classified into 13 categories: business, entertainment, Europe, health, Italia, music feeds, sci/tech, software &amp; dev., sports, toons, top news, U.S., and world. The dataset contains more than 1 million news articles. However, there are several limitations to this dataset. First, it is currently outdated since data were collected in 2005. Second, the taxonomy covers specific countries such as the US and Italy but has general references such as Europe or world, creating overlaps in the classification (e.g., Italy and Europe) as well as potential imbalances (e.g., events in China are likely to be underrepresented and/or under-reported compared to those in the US). Finally, the dataset does not include methods for type or category description.</p>
+      <p>The L33-Yahoo News dataset is a collection of news articles from the Yahoo News website provided as part of the Yahoo! Webscope program. The articles are labeled into 414 categories such as music, movies, crime justice, and others. The dataset includes the random article id followed by possible associated categories. The L33-Yahoo News dataset is available under Yahoo&#x2019;s data protection standards. It can be used for non-commercial purposes if researchers credit the source and license new creations under identical terms. The limitations of the L33 dataset are the license terms, restricting companies from using this dataset for commercial purposes, and the amount of data per class, with the category &#x201C;supreme court decisions&#x201D; having only five articles, for example. In addition, there is some overlap in the categories, which makes it challenging to train a model that can accurately predict multiple categories.</p>
+      <p>The News Category Dataset is a collection of around 210k news articles from the Huffington Post, labeled with their respective categories, which include business, entertainment, politics, science and technology, and sports. However, the dataset has several limitations. First, the dataset is not comprehensive since it only includes articles from one source. Second, news categories are not standardized, including broad categories such as &#x201C;Media&#x201D; and &#x201C;Politics&#x201D; and very narrow ones like &#x201C;Weddings&#x201D; and &#x201C;Latino voices&#x201D;.</p>
+      <p>The Media Cloud Data Set is a collection of over 1.7 billion articles from more than 60 thousand media sources around the world. The dataset includes articles from both mainstream and alternative news sources, including newspapers, magazines, blogs, and online news outlets. Data can be queried by keyword, tag, category, sentiment, and location. This dataset is useful for researchers who are interested in studying media coverage of specific topics or trends over time. Media Cloud is a large multilingual dataset that has good media coverage but limited use in topic classification models since it does not include a mapping of articles to a specific news taxonomy.</p>
+      <p>The main motivation for this work is to provide a dataset for building specific topic models. It consists of a categorized subset taken from an existing news dataset. We show that such a dataset, with up-to-date articles mapped into a standardized news taxonomy, can contribute to the accuracy improvement of news classification models.</p>
+    </sec>
+    <sec sec-type="methods" id="sec2-data-08-00074">
+      <title>2. Methods</title>
+      <p>In this paper, we present a new dataset based on the NELA-GT-2019 data source [<xref ref-type="bibr" rid="B11-data-08-00074">11</xref>], classified with IPTC&#x2019;s NewsCodes Media Topic taxonomy [<xref ref-type="bibr" rid="B12-data-08-00074">12</xref>] (The International Press Telecommunications Council, or IPTC, is an organization that creates and maintains standards for exchanging news and other information between news organizations). The original NELA-GT-2019 dataset contains 1.12 M news articles from 260 sources collected between 1 January 2019 and 31 December 2019, providing essential content diversity and topic coverage. Sources include a wide range of mainstream and alternative news outlets.</p>
+      <p>In turn, the IPTC taxonomies are a set of controlled vocabularies used to describe news stories&#x2019; content. The NewsCodes Media Topic taxonomy has been one of IPTC&#x2019;s main subject taxonomies for text classification since 2010. We used the 2020 version of NewsCodes Media Topic taxonomy [<xref ref-type="bibr" rid="B13-data-08-00074">13</xref>]. News organizations use it to categorize and index their content, while search engines use it to improve the discoverability of news stories [<xref ref-type="bibr" rid="B14-data-08-00074">14</xref>].</p>
+      <p>Algorithm of the article selection process:<list list-type="order"><list-item><p>Obtain a random article from the NELA dataset;</p></list-item><list-item><p>Classify it for the second-level category of the NewsCodes Media Topic taxonomy by checking the keywords and thorough reading of the article; the news article is assigned to exactly one category;</p></list-item><list-item><p>If there are already 100 articles in that category discard it, otherwise assign a second-level category to the article;</p></list-item><list-item><p>Return to step 1 and repeat until each second-level category has 100 articles assigned.</p></list-item></list></p>
+      <p>The described algorithm allows for overcoming the limitation of the NELA-GT datasets where a large proportion of the dataset is fringe, conspiracy-based news due to the discharging of the news if a category already has 100 articles in it.</p>
+      <p>We observed that the first-level category of the NewsCodes Media Topic taxonomy is not accurate enough to catalogue an article. For example, the &#x201C;sport&#x201D; category may include different aspects, such as information about specific sports, sports event announcements, and the sports industry in general, which have more specific meanings than the first-level category label is able to convey. Therefore, we used a second-level category of NewsCodes Media Topic taxonomy to have a more specific article category. In comparison to the previously published datasets, we included in our dataset unique categories such as &#x201C;arts and entertainment&#x201D;, &#x201C;mass media&#x201D;, &#x201C;armed conflict&#x201D;, &#x201C;weather statistic&#x201D;, and &#x201C;weather warning&#x201D;. Therefore, we created the proposed Multilabeled News Dataset (MN-DS) by hand-picking and labeling approximately 100 news articles for each second level category (<uri>https://www.iptc.org/std/NewsCodes/treeview/mediatopic/mediatopic-en-GB.html</uri> (accessed on 13 March 2022)) of the NewsCodes Media Topic taxonomy.</p>
+    </sec>
+    <sec id="sec3-data-08-00074">
+      <title>3. Data Records</title>
+      <p>After manually selecting news articles relevant to each category, we obtained 10,917 articles in 17 first-level and 109 second-level categories from 215 media sources. During the selection process, one article was processed by one coder. An overview of the released MN-DS dataset by category is provided in <xref ref-type="table" rid="data-08-00074-t001">Table 1</xref>. All data are available in CSV format at <uri>https://doi.org/10.5281/zenodo.7394850</uri> under a Creative Commons license.</p>
+      <p>The MN-DS contains articles published in 2019, the distribution of selected articles over the year is balanced with slightly more articles for the month of January 2019. The majority of the articles were selected from mainstream sources such as ABC News, the BBC, The Sun, TASS, The Guardian, Birmingham Mail, The Independent, Evening Standard, and others. The dataset also includes a relatively small percentage of articles from alternative sources such as Sputnik, FREEDOMBUNKER, or Daily Buzz Live.</p>
+      <p>To describe the dataset, we created a word cloud representation of each category, as shown in <xref ref-type="fig" rid="data-08-00074-f001">Figure 1</xref>. The central concept of a word cloud is to visualize for each category the most popular words with a size corresponding to the degree of popularity. This representation allows us to quickly assess the quality of the text annotation since it displays the most common words of the category. In the bar chart shown in <xref ref-type="fig" rid="data-08-00074-f002">Figure 2</xref>, we can observe that the &#x201C;science and technology&#x201D; first-level category contains the highest count of topic-specific words, while in more general categories, such as &#x201C;weather&#x201D; or &#x201C;human interest&#x201D;, there is less variety in the texts, probably because they represent shorter and more similar articles.</p>
+      <p>The purpose of this dataset is to provide labeled data to train and test classifiers to predict the topic of a news article. Since the MN-DS represent the subset of the NELA-GT dataset, it could be also used to study the veracity of news articles but is not limited to this application. Due to the nature of the NELA-GT dataset, the style of articles is less formal, and we expect it to be the best fit for the alternative/conspiracy sources or social media article classification.</p>
+      <sec>
+        <title>Description of Columns in the Data Table</title>
+        <list list-type="bullet">
+          <list-item>
+            <p>id: Unique identifier of the article.</p>
+          </list-item>
+          <list-item>
+            <p>date: Date of the article release.</p>
+          </list-item>
+          <list-item>
+            <p>source: Publisher information of the article.</p>
+          </list-item>
+          <list-item>
+            <p>title: Title of the news article.</p>
+          </list-item>
+          <list-item>
+            <p>content: Text of the news article.</p>
+          </list-item>
+          <list-item>
+            <p>author: Author of the news article.</p>
+          </list-item>
+          <list-item>
+            <p>url: Link to the original article.</p>
+          </list-item>
+          <list-item>
+            <p>published: Date of article publication in local time.</p>
+          </list-item>
+          <list-item>
+            <p>published_utc: Date of article publication in utc time.</p>
+          </list-item>
+          <list-item>
+            <p>collection_utc: Date of article scraping in utc time.</p>
+          </list-item>
+          <list-item>
+            <p>category_level_1: First level category of Media Topic NewsCodes&#x2019;s taxonomy.</p>
+          </list-item>
+          <list-item>
+            <p>category_level_2: Second level category of Media Topic NewsCodes&#x2019;s taxonomy.</p>
+          </list-item>
+        </list>
+      </sec>
+    </sec>
+    <sec id="sec4-data-08-00074">
+      <title>4. Usage Example</title>
+      <p>We used the dataset to train the most common text classification models to extend the technical validation of the proposed dataset and establish the benchmark for multiclass classification. The following embeddings were selected:<list list-type="bullet"><list-item><p>Tf-idf embedding, where Tf-idf stands for term frequency-inverse document frequency [<xref ref-type="bibr" rid="B15-data-08-00074">15</xref>]. Tf-idf transforms text into a numerical representation called a tf-idf matrix. The term frequency is the number of times a word appears in a document. The inverse document frequency measures how common a word is across all documents. Tf-idf is used to weigh words so that important words are given more weight. The dataset&#x2019;s news texts and categories were combined and vectorized with TfidfVectorizer [<xref ref-type="bibr" rid="B16-data-08-00074">16</xref>].</p></list-item><list-item><p>GloVe (Global Vectors for Word Representation) embeddings with an algorithm based on a co-occurrence matrix, which counts how often words appear together in a text corpus. The resulting vectors are then transformed into a lower-dimensional space using singular value decomposition [<xref ref-type="bibr" rid="B17-data-08-00074">17</xref>].</p></list-item><list-item><p>DistilBertTokenizer [<xref ref-type="bibr" rid="B18-data-08-00074">18</xref>], which is a distilled version of BERT, a popular pre-trained model for natural language processing. DistilBERT is smaller and faster than BERT, making it more suitable for fast training with limited resources. The trade-off is that DistilBERT&#x2019;s performance is 3% lower than BERT&#x2019;s. DistilBERT embeddings are trained on the same data as BERT, so they are equally good at capturing the meaning of words in context.</p></list-item></list></p>
+      <p>During dataset validation, we combined the selected embeddings with different classifiers. We tested multinomial naive Bayes (NB) classifier [<xref ref-type="bibr" rid="B19-data-08-00074">19</xref>], logistic regression [<xref ref-type="bibr" rid="B20-data-08-00074">20</xref>], support vector classifier (SVC) [<xref ref-type="bibr" rid="B21-data-08-00074">21</xref>], and DistilBERT model [<xref ref-type="bibr" rid="B22-data-08-00074">22</xref>]. Since MN-DS is a multiclass dataset, we used the OneVsRestClassifier strategy for classification models [<xref ref-type="bibr" rid="B16-data-08-00074">16</xref>]. OneVsRestClassifier is a classifier that trains multiple binary classifiers, one for each class. The individual binary classifiers are then combined to create a single multiclass classifier. This approach is often used when there are many categories, as it can be more efficient than training a single multiclass classifier from scratch. The tested classifiers work as follows:<list list-type="bullet"><list-item><p>The multinomial NB is a text classification algorithm that uses Bayesian inference to classify text. It is a simple and effective technique that can be used for various tasks, such as spam filtering and document classification. The algorithm is based on the assumption that the features in a document are independent of each other, which allows it to make predictions about the category of a document based on its individual features.</p></list-item><list-item><p>The logistic regression classifier works by using a sigmoid function to map data points from an input space to an output space, where the categories are assigned based on a linear combination of the features. The weights of the features are learned through training, and the predictions are made by taking the dot product of the feature vector and the weight vector.</p></list-item><list-item><p>The SVC classifier is a powerful machine learning model based on the support vector machines algorithm. The model is based on finding the optimal decision boundary between categories to maximize the margin of separation between them. The SVC model can be used for linear and non-linear classification tasks and is particularly well-suited for problems with high dimensional data. The classifier is also robust to overfitting and can generalize well to new data.</p></list-item><list-item><p>DistilBERTModel, a light version of the BERT classifier [<xref ref-type="bibr" rid="B18-data-08-00074">18</xref>], developed and open-sourced by the team at Hugging Face. DistilBERTModel can be fine-tuned with just one additional output layer to create state-of-the-art models for a wide range of NLP tasks with minimal training data.</p></list-item></list></p>
+      <p>Classification results for level 1 and level 2 categories are presented in <xref ref-type="table" rid="data-08-00074-t002">Table 2</xref> and <xref ref-type="table" rid="data-08-00074-t003">Table 3</xref>, respectively. It is possible to observe that DistilBERTModel achieves better classification results for both category levels. To improve these results in future studies, we suggest applying hierarchical classification methods as described by Silla and Freitas [<xref ref-type="bibr" rid="B23-data-08-00074">23</xref>], for example.</p>
+    </sec>
+  </body>
+  <back>
+    <notes>
+      <title>Author Contributions</title>
+      <p>A.P. created the search strategy, retrieved and screened the publications, extracted the selected data for annotation, and labeled the dataset. A.P. and N.F. assessed the quality of the included articles and checked the data. A.P. performed the statistical analyses, created the graphics and wrote the original draft. N.F. conceived the project, provided critical comments, and revised the paper. All authors have read and agreed to the published version of the manuscript.</p>
+    </notes>
+    <notes>
+      <title>Institutional Review Board Statement</title>
+      <p>Not applicable.</p>
+    </notes>
+    <notes>
+      <title>Informed Consent Statement</title>
+      <p>Not applicable.</p>
+    </notes>
+    <notes>
+      <title>Data Availability Statement</title>
+      <p>The data described in this paper is available in CSV format at <uri>https://doi.org/10.5281/zenodo.7394850</uri>. Code for the technical validation of the dataset is available at <uri>https://github.com/alinapetukhova/mn-ds-news-classification</uri> (accessed on 15 April 2023).</p>
+    </notes>
+    <notes notes-type="COI-statement">
+      <title>Conflicts of Interest</title>
+      <p>The authors declare no conflict of interest.</p>
+    </notes>
+    <ref-list>
+      <title>References</title>
+      <ref id="B1-data-08-00074">
+        <label>1.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Paullada</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Raji</surname>
+              <given-names>I.D.</given-names>
+            </name>
+            <name>
+              <surname>Bender</surname>
+              <given-names>E.M.</given-names>
+            </name>
+            <name>
+              <surname>Denton</surname>
+              <given-names>E.</given-names>
+            </name>
+            <name>
+              <surname>Hanna</surname>
+              <given-names>A.</given-names>
+            </name>
+          </person-group>
+          <article-title>Data and its (dis)contents: A survey of dataset development and use in machine learning research</article-title>
+          <source>Patterns</source>
+          <year>2021</year>
+          <volume>2</volume>
+          <fpage>100336</fpage>
+          <pub-id pub-id-type="doi">10.1016/j.patter.2021.100336</pub-id>
+          <pub-id pub-id-type="pmid">34820643</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B2-data-08-00074">
+        <label>2.</label>
+        <element-citation publication-type="confproc">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Jayakody</surname>
+              <given-names>N.</given-names>
+            </name>
+            <name>
+              <surname>Mohammad</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Halgamuge</surname>
+              <given-names>M.</given-names>
+            </name>
+          </person-group>
+          <article-title>Fake News Detection using a Decentralized Deep Learning Model and Federated Learning</article-title>
+          <source>Proceedings of the IECON 2022&#x2014;48th Annual Conference of the IEEE Industrial Electronics Society</source>
+          <conf-loc>Brussels, Belgium</conf-loc>
+          <conf-date>17&#x2013;20 October 2022</conf-date>
+        </element-citation>
+      </ref>
+      <ref id="B3-data-08-00074">
+        <label>3.</label>
+        <element-citation publication-type="thesis">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Stefansson</surname>
+              <given-names>J.K.</given-names>
+            </name>
+          </person-group>
+          <article-title>Quantitative Measure of Evaluative Labeling in News Reports: Psychology of Communication Bias Studied by Content Analysis and Semantic Differential</article-title>
+          <source>Master&#x2019;s Thesis</source>
+          <publisher-name>UiT, Norway&#x2019;s Arctic University</publisher-name>
+          <publisher-loc>Troms&#xF8;, Norway</publisher-loc>
+          <year>2014</year>
+        </element-citation>
+      </ref>
+      <ref id="B4-data-08-00074">
+        <label>4.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Gezici</surname>
+              <given-names>G.</given-names>
+            </name>
+          </person-group>
+          <article-title>Quantifying Political Bias in News Articles</article-title>
+          <source>arXiv</source>
+          <year>2022</year>
+          <pub-id pub-id-type="arxiv">2210.03404</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B5-data-08-00074">
+        <label>5.</label>
+        <element-citation publication-type="web">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Mitchell</surname>
+              <given-names>T.</given-names>
+            </name>
+          </person-group>
+          <article-title>20 Newsgroups Data Set</article-title>
+          <year>1999</year>
+          <comment>Available online: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://qwone.com/~jason/20Newsgroups/" ext-link-type="uri">http://qwone.com/~jason/20Newsgroups/</ext-link></comment>
+          <date-in-citation content-type="access-date" iso-8601-date="2023-04-10">(accessed on 10 April 2023)</date-in-citation>
+        </element-citation>
+      </ref>
+      <ref id="B6-data-08-00074">
+        <label>6.</label>
+        <element-citation publication-type="web">
+          <article-title>AG&#x2019;s Corpus of News Articles</article-title>
+          <year>2005</year>
+          <comment>Available online: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://groups.di.unipi.it/~gulli/AG_corpus_of_news_articles.html" ext-link-type="uri">http://groups.di.unipi.it/~gulli/AG_corpus_of_news_articles.html</ext-link></comment>
+          <date-in-citation content-type="access-date" iso-8601-date="2023-04-10">(accessed on 10 April 2023)</date-in-citation>
+        </element-citation>
+      </ref>
+      <ref id="B7-data-08-00074">
+        <label>7.</label>
+        <element-citation publication-type="confproc">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Soni</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Mehdad</surname>
+              <given-names>Y.</given-names>
+            </name>
+          </person-group>
+          <article-title>RIPML: A Restricted Isometry Property-Based Approach to Multilabel Learning</article-title>
+          <source>Proceedings of the Thirtieth International Florida Artificial Intelligence Research Society Conference, FLAIRS 2017</source>
+          <conf-loc>Marco Island, FL, USA</conf-loc>
+          <conf-date>22&#x2013;24 May 2017</conf-date>
+          <person-group person-group-type="editor">
+            <name>
+              <surname>Rus</surname>
+              <given-names>V.</given-names>
+            </name>
+            <name>
+              <surname>Markov</surname>
+              <given-names>Z.</given-names>
+            </name>
+          </person-group>
+          <publisher-name>AAAI Press</publisher-name>
+          <publisher-loc>Palo Alto, CA, USA</publisher-loc>
+          <year>2017</year>
+          <fpage>532</fpage>
+          <lpage>537</lpage>
+        </element-citation>
+      </ref>
+      <ref id="B8-data-08-00074">
+        <label>8.</label>
+        <element-citation publication-type="confproc">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Chen</surname>
+              <given-names>S.</given-names>
+            </name>
+            <name>
+              <surname>Soni</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Pappu</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Mehdad</surname>
+              <given-names>Y.</given-names>
+            </name>
+          </person-group>
+          <article-title>DocTag2Vec: An Embedding Based Multi-label Learning Approach for Document Tagging</article-title>
+          <source>Proceedings of the Rep4NLP@ACL</source>
+          <conf-loc>Vancouver, BC, Canada</conf-loc>
+          <conf-date>3 August 2017</conf-date>
+        </element-citation>
+      </ref>
+      <ref id="B9-data-08-00074">
+        <label>9.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Misra</surname>
+              <given-names>R.</given-names>
+            </name>
+          </person-group>
+          <article-title>News Category Dataset</article-title>
+          <source>arXiv</source>
+          <year>2022</year>
+          <pub-id pub-id-type="arxiv">2209.11429</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B10-data-08-00074">
+        <label>10.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Roberts</surname>
+              <given-names>H.</given-names>
+            </name>
+            <name>
+              <surname>Bhargava</surname>
+              <given-names>R.</given-names>
+            </name>
+            <name>
+              <surname>Valiukas</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>Jen</surname>
+              <given-names>D.</given-names>
+            </name>
+            <name>
+              <surname>Malik</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Bishop</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Ndulue</surname>
+              <given-names>E.</given-names>
+            </name>
+            <name>
+              <surname>Dave</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Clark</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Etling</surname>
+              <given-names>B.</given-names>
+            </name>
+            <etal/>
+          </person-group>
+          <article-title>Media Cloud: Massive Open Source Collection of Global News on the Open Web</article-title>
+          <source>arXiv</source>
+          <year>2021</year>
+          <pub-id pub-id-type="arxiv">v15i1.18127</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B11-data-08-00074">
+        <label>11.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Gruppi</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Horne</surname>
+              <given-names>B.D.</given-names>
+            </name>
+            <name>
+              <surname>Adal&#x131;</surname>
+              <given-names>S.</given-names>
+            </name>
+          </person-group>
+          <article-title>NELA-GT-2019: A Large Multi-Labelled News Dataset for The Study of Misinformation in News Articles</article-title>
+          <source>arXiv</source>
+          <year>2020</year>
+          <pub-id pub-id-type="arxiv">2003.08444</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B12-data-08-00074">
+        <label>12.</label>
+        <element-citation publication-type="web">
+          <article-title>IPTC NewsCodes Scheme (Controlled Vocabulary)</article-title>
+          <year>2010</year>
+          <comment>Available online: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://cv.iptc.org/newscodes/mediatopic/" ext-link-type="uri">https://cv.iptc.org/newscodes/mediatopic/</ext-link></comment>
+          <date-in-citation content-type="access-date" iso-8601-date="2023-04-10">(accessed on 10 April 2023)</date-in-citation>
+        </element-citation>
+      </ref>
+      <ref id="B13-data-08-00074">
+        <label>13.</label>
+        <element-citation publication-type="web">
+          <article-title>IPTC Media Topics&#x2014;Vocabulary Published on 25 February 2020</article-title>
+          <year>2020</year>
+          <comment>Available online: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.iptc.org/std/NewsCodes/previous-versions/IPTC-MediaTopic-NewsCodes_2020-02-25.xlsx" ext-link-type="uri">https://www.iptc.org/std/NewsCodes/previous-versions/IPTC-MediaTopic-NewsCodes_2020-02-25.xlsx</ext-link></comment>
+          <date-in-citation content-type="access-date" iso-8601-date="2023-04-10">(accessed on 10 April 2023)</date-in-citation>
+        </element-citation>
+      </ref>
+      <ref id="B14-data-08-00074">
+        <label>14.</label>
+        <element-citation publication-type="web">
+          <article-title>NewsCodes&#x2014;Controlled Vocabularies for the Media</article-title>
+          <comment>Available online: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://iptc.org/standards/newscodes/#:~:text=Who%20uses%20IPTC%20NewsCodes%3F,becoming%20more%20and%20more%20popular" ext-link-type="uri">https://iptc.org/standards/newscodes/#:~:text=Who%20uses%20IPTC%20NewsCodes%3F,becoming%20more%20and%20more%20popular</ext-link></comment>
+          <date-in-citation content-type="access-date" iso-8601-date="2022-11-21">(accessed on 21 November 2022)</date-in-citation>
+        </element-citation>
+      </ref>
+      <ref id="B15-data-08-00074">
+        <label>15.</label>
+        <element-citation publication-type="book">
+          <person-group person-group-type="editor">
+            <name>
+              <surname>Sammut</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Webb</surname>
+              <given-names>G.I.</given-names>
+            </name>
+          </person-group>
+          <article-title>TF&#x2013;IDF</article-title>
+          <source>Encyclopedia of Machine Learning</source>
+          <publisher-name>Springer</publisher-name>
+          <publisher-loc>Boston, MA, USA</publisher-loc>
+          <year>2010</year>
+          <fpage>986</fpage>
+          <lpage>987</lpage>
+          <pub-id pub-id-type="doi">10.1007/978-0-387-30164-8_832</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B16-data-08-00074">
+        <label>16.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Pedregosa</surname>
+              <given-names>F.</given-names>
+            </name>
+            <name>
+              <surname>Varoquaux</surname>
+              <given-names>G.</given-names>
+            </name>
+            <name>
+              <surname>Gramfort</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Michel</surname>
+              <given-names>V.</given-names>
+            </name>
+            <name>
+              <surname>Thirion</surname>
+              <given-names>B.</given-names>
+            </name>
+            <name>
+              <surname>Grisel</surname>
+              <given-names>O.</given-names>
+            </name>
+            <name>
+              <surname>Blondel</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Prettenhofer</surname>
+              <given-names>P.</given-names>
+            </name>
+            <name>
+              <surname>Weiss</surname>
+              <given-names>R.</given-names>
+            </name>
+            <name>
+              <surname>Dubourg</surname>
+              <given-names>V.</given-names>
+            </name>
+            <etal/>
+          </person-group>
+          <article-title>Scikit-Learn: Machine Learning in Python</article-title>
+          <source>J. Mach. Learn. Res.</source>
+          <year>2011</year>
+          <volume>12</volume>
+          <fpage>2825</fpage>
+          <lpage>2830</lpage>
+        </element-citation>
+      </ref>
+      <ref id="B17-data-08-00074">
+        <label>17.</label>
+        <element-citation publication-type="confproc">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Pennington</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Socher</surname>
+              <given-names>R.</given-names>
+            </name>
+            <name>
+              <surname>Manning</surname>
+              <given-names>C.</given-names>
+            </name>
+          </person-group>
+          <article-title>Glove: Global Vectors for Word Representation</article-title>
+          <source>Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP)</source>
+          <conf-loc>Doha, Qatar</conf-loc>
+          <conf-date>25&#x2013;29 October 2014</conf-date>
+          <fpage>1532</fpage>
+          <lpage>1543</lpage>
+          <pub-id pub-id-type="doi">10.3115/v1/d14-1162</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B18-data-08-00074">
+        <label>18.</label>
+        <element-citation publication-type="confproc">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Wolf</surname>
+              <given-names>T.</given-names>
+            </name>
+            <name>
+              <surname>Debut</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>Sanh</surname>
+              <given-names>V.</given-names>
+            </name>
+            <name>
+              <surname>Chaumond</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Delangue</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Moi</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Cistac</surname>
+              <given-names>P.</given-names>
+            </name>
+            <name>
+              <surname>Rault</surname>
+              <given-names>T.</given-names>
+            </name>
+            <name>
+              <surname>Louf</surname>
+              <given-names>R.</given-names>
+            </name>
+            <name>
+              <surname>Funtowicz</surname>
+              <given-names>M.</given-names>
+            </name>
+            <etal/>
+          </person-group>
+          <article-title>Transformers: State-of-the-Art Natural Language Processing</article-title>
+          <source>Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing: System Demonstrations</source>
+          <conf-loc>Online</conf-loc>
+          <conf-date>16&#x2013;20 November 2020</conf-date>
+          <fpage>38</fpage>
+          <lpage>45</lpage>
+        </element-citation>
+      </ref>
+      <ref id="B19-data-08-00074">
+        <label>19.</label>
+        <element-citation publication-type="book">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Manning</surname>
+              <given-names>C.D.</given-names>
+            </name>
+            <name>
+              <surname>Raghavan</surname>
+              <given-names>P.</given-names>
+            </name>
+            <name>
+              <surname>Sch&#xFC;tze</surname>
+              <given-names>H.</given-names>
+            </name>
+          </person-group>
+          <source>Introduction to Information Retrieval</source>
+          <publisher-name>Cambridge University Press</publisher-name>
+          <publisher-loc>Cambridge, MA, USA</publisher-loc>
+          <year>2008</year>
+          <fpage>234</fpage>
+          <lpage>265</lpage>
+        </element-citation>
+      </ref>
+      <ref id="B20-data-08-00074">
+        <label>20.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Cox</surname>
+              <given-names>D.R.</given-names>
+            </name>
+          </person-group>
+          <article-title>The regression analysis of binary sequences</article-title>
+          <source>J. R. Stat. Soc. Ser. B (Methodol.)</source>
+          <year>1958</year>
+          <volume>20</volume>
+          <fpage>215</fpage>
+          <lpage>242</lpage>
+          <pub-id pub-id-type="doi">10.1111/j.2517-6161.1958.tb00292.x</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B21-data-08-00074">
+        <label>21.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Cortes</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Vapnik</surname>
+              <given-names>V.</given-names>
+            </name>
+          </person-group>
+          <article-title>Support-vector networks</article-title>
+          <source>Mach. Learn.</source>
+          <year>1995</year>
+          <volume>20</volume>
+          <fpage>273</fpage>
+          <lpage>297</lpage>
+          <pub-id pub-id-type="doi">10.1007/BF00994018</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B22-data-08-00074">
+        <label>22.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Sanh</surname>
+              <given-names>V.</given-names>
+            </name>
+            <name>
+              <surname>Debut</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>Chaumond</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Wolf</surname>
+              <given-names>T.</given-names>
+            </name>
+          </person-group>
+          <article-title>DistilBERT, a distilled version of BERT: Smaller, faster, cheaper and lighter</article-title>
+          <source>arXiv</source>
+          <year>2019</year>
+          <pub-id pub-id-type="arxiv">1910.01108</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B23-data-08-00074">
+        <label>23.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Silla</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Freitas</surname>
+              <given-names>A.</given-names>
+            </name>
+          </person-group>
+          <article-title>A survey of hierarchical classification across different application domains</article-title>
+          <source>Data Min. Knowl. Discov.</source>
+          <year>2011</year>
+          <volume>22</volume>
+          <fpage>31</fpage>
+          <lpage>72</lpage>
+          <pub-id pub-id-type="doi">10.1007/s10618-010-0175-9</pub-id>
+        </element-citation>
+      </ref>
+    </ref-list>
+    <sec sec-type="display-objects">
+      <title>Figures and Tables</title>
+      <fig id="data-08-00074-f001" position="float">
+        <label>Figure 1</label>
+        <caption>
+          <p>Word clouds of MN-DS dataset for selected second-level categories.</p>
+        </caption>
+        <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data-08-00074-g001.tif"/>
+      </fig>
+      <fig id="data-08-00074-f002" position="float">
+        <label>Figure 2</label>
+        <caption>
+          <p>Mean number of non-repeated words in article body for first-level categories. The error bars represent the 95% confidence interval.</p>
+        </caption>
+        <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data-08-00074-g002.tif"/>
+      </fig>
+      <table-wrap id="data-08-00074-t001" position="float">
+        <object-id pub-id-type="pii">data-08-00074-t001_Table 1</object-id>
+        <label>Table 1</label>
+        <caption>
+          <p>The number of articles under each Level 1 category.</p>
+        </caption>
+        <table>
+          <thead>
+            <tr>
+              <th align="center" valign="middle" style="border-bottom:solid thin;border-top:solid thin">Categories</th>
+              <th align="center" valign="middle" style="border-bottom:solid thin;border-top:solid thin">Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td align="left" valign="middle">Arts, culture, entertainment, and media</td>
+              <td align="center" valign="middle">300</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle">Conflict, war, and peace</td>
+              <td align="center" valign="middle">800</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle">Crime, law, and justice</td>
+              <td align="center" valign="middle">500</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle">Disaster, accidents, and emergency incidents</td>
+              <td align="center" valign="middle">500</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle">Economy, business and finance</td>
+              <td align="center" valign="middle">400</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle">Education</td>
+              <td align="center" valign="middle">607</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle">Environment</td>
+              <td align="center" valign="middle">600</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle">Health</td>
+              <td align="center" valign="middle">700</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle">Human interest</td>
+              <td align="center" valign="middle">600</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle">Labor</td>
+              <td align="center" valign="middle">703</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle">Lifestyle and leisure</td>
+              <td align="center" valign="middle">300</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle">Politics</td>
+              <td align="center" valign="middle">900</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle">Religion and belief</td>
+              <td align="center" valign="middle">800</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle">Science and technology</td>
+              <td align="center" valign="middle">800</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle">Society</td>
+              <td align="center" valign="middle">1100</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle">Sport</td>
+              <td align="center" valign="middle">907</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle" style="border-bottom:solid thin">Weather</td>
+              <td align="center" valign="middle" style="border-bottom:solid thin">400</td>
+            </tr>
+          </tbody>
+        </table>
+      </table-wrap>
+      <table-wrap id="data-08-00074-t002" position="float">
+        <object-id pub-id-type="pii">data-08-00074-t002_Table 2</object-id>
+        <label>Table 2</label>
+        <caption>
+          <p>Multilabel classification results for level 1 categories.</p>
+        </caption>
+        <table>
+          <thead>
+            <tr>
+              <th align="center" valign="middle" style="border-top:solid thin">Embeddings</th>
+              <th colspan="3" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">TFIDF</th>
+              <th colspan="3" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">Glove</th>
+              <th colspan="3" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">DistilBertTokenizer</th>
+            </tr>
+            <tr>
+              <th align="center" valign="middle" style="border-bottom:solid thin">Model</th>
+              <th align="center" valign="middle" style="border-bottom:solid thin">Precision</th>
+              <th align="center" valign="middle" style="border-bottom:solid thin">Recall</th>
+              <th align="center" valign="middle" style="border-bottom:solid thin">f1 Score</th>
+              <th align="center" valign="middle" style="border-bottom:solid thin">Precision</th>
+              <th align="center" valign="middle" style="border-bottom:solid thin">Recall</th>
+              <th align="center" valign="middle" style="border-bottom:solid thin">f1 Score</th>
+              <th align="center" valign="middle" style="border-bottom:solid thin">Precision</th>
+              <th align="center" valign="middle" style="border-bottom:solid thin">Recall</th>
+              <th align="center" valign="middle" style="border-bottom:solid thin">f1 Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td align="center" valign="middle">Multinomial NB</td>
+              <td align="center" valign="middle">0.802</td>
+              <td align="center" valign="middle">0.631</td>
+              <td align="center" valign="middle">0.649</td>
+              <td align="center" valign="middle">0.629</td>
+              <td align="center" valign="middle">0.499</td>
+              <td align="center" valign="middle">0.529</td>
+              <td align="center" valign="middle">n/a</td>
+              <td align="center" valign="middle">n/a</td>
+              <td align="center" valign="middle">n/a</td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle">Logistic Regression</td>
+              <td align="center" valign="middle">0.800</td>
+              <td align="center" valign="middle">0.763</td>
+              <td align="center" valign="middle">0.774</td>
+              <td align="center" valign="middle">0.747</td>
+              <td align="center" valign="middle">0.739</td>
+              <td align="center" valign="middle">0.739</td>
+              <td align="center" valign="middle">n/a</td>
+              <td align="center" valign="middle">n/a</td>
+              <td align="center" valign="middle">n/a</td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle">SVC Classifier</td>
+              <td align="center" valign="middle">0.808</td>
+              <td align="center" valign="middle">0.796</td>
+              <td align="center" valign="middle">0.799</td>
+              <td align="center" valign="middle">0.768</td>
+              <td align="center" valign="middle">0.762</td>
+              <td align="center" valign="middle">0.760</td>
+              <td align="center" valign="middle">n/a</td>
+              <td align="center" valign="middle">n/a</td>
+              <td align="center" valign="middle">n/a</td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle" style="border-bottom:solid thin">DistilBERTModel</td>
+              <td align="center" valign="middle" style="border-bottom:solid thin">n/a</td>
+              <td align="center" valign="middle" style="border-bottom:solid thin">n/a</td>
+              <td align="center" valign="middle" style="border-bottom:solid thin">n/a</td>
+              <td align="center" valign="middle" style="border-bottom:solid thin">n/a</td>
+              <td align="center" valign="middle" style="border-bottom:solid thin">n/a</td>
+              <td align="center" valign="middle" style="border-bottom:solid thin">n/a</td>
+              <td align="center" valign="middle" style="border-bottom:solid thin">0.849</td>
+              <td align="center" valign="middle" style="border-bottom:solid thin">0.842</td>
+              <td align="center" valign="middle" style="border-bottom:solid thin">0.844</td>
+            </tr>
+          </tbody>
+        </table>
+      </table-wrap>
+      <table-wrap id="data-08-00074-t003" position="float">
+        <object-id pub-id-type="pii">data-08-00074-t003_Table 3</object-id>
+        <label>Table 3</label>
+        <caption>
+          <p>Multilabel classification results for level 2 categories.</p>
+        </caption>
+        <table>
+          <thead>
+            <tr>
+              <th align="center" valign="middle" style="border-top:solid thin">Embeddings</th>
+              <th colspan="3" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">TFIDF</th>
+              <th colspan="3" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">Glove</th>
+              <th colspan="3" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">DistilBertTokenizer</th>
+            </tr>
+            <tr>
+              <th align="center" valign="middle" style="border-bottom:solid thin">Model</th>
+              <th align="center" valign="middle" style="border-bottom:solid thin">Precision</th>
+              <th align="center" valign="middle" style="border-bottom:solid thin">Recall</th>
+              <th align="center" valign="middle" style="border-bottom:solid thin">f1 Score</th>
+              <th align="center" valign="middle" style="border-bottom:solid thin">Precision</th>
+              <th align="center" valign="middle" style="border-bottom:solid thin">Recall</th>
+              <th align="center" valign="middle" style="border-bottom:solid thin">f1 Score</th>
+              <th align="center" valign="middle" style="border-bottom:solid thin">Precision</th>
+              <th align="center" valign="middle" style="border-bottom:solid thin">Recall</th>
+              <th align="center" valign="middle" style="border-bottom:solid thin">f1 Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td align="center" valign="middle">Multinomial NB</td>
+              <td align="center" valign="middle">0.628</td>
+              <td align="center" valign="middle">0.602</td>
+              <td align="center" valign="middle">0.583</td>
+              <td align="center" valign="middle">0.496</td>
+              <td align="center" valign="middle">0.484</td>
+              <td align="center" valign="middle">0.469</td>
+              <td align="center" valign="middle">n/a</td>
+              <td align="center" valign="middle">n/a</td>
+              <td align="center" valign="middle">n/a</td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle">Logistic Regression</td>
+              <td align="center" valign="middle">0.646</td>
+              <td align="center" valign="middle">0.649</td>
+              <td align="center" valign="middle">0.635</td>
+              <td align="center" valign="middle">0.589</td>
+              <td align="center" valign="middle">0.589</td>
+              <td align="center" valign="middle">0.577</td>
+              <td align="center" valign="middle">n/a</td>
+              <td align="center" valign="middle">n/a</td>
+              <td align="center" valign="middle">n/a</td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle">SVC Classifier</td>
+              <td align="center" valign="middle">0.645</td>
+              <td align="center" valign="middle">0.646</td>
+              <td align="center" valign="middle">0.628</td>
+              <td align="center" valign="middle">0.581</td>
+              <td align="center" valign="middle">0.595</td>
+              <td align="center" valign="middle">0.571</td>
+              <td align="center" valign="middle">n/a</td>
+              <td align="center" valign="middle">n/a</td>
+              <td align="center" valign="middle">n/a</td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle" style="border-bottom:solid thin">DistilBERTModel</td>
+              <td align="center" valign="middle" style="border-bottom:solid thin">n/a</td>
+              <td align="center" valign="middle" style="border-bottom:solid thin">n/a</td>
+              <td align="center" valign="middle" style="border-bottom:solid thin">n/a</td>
+              <td align="center" valign="middle" style="border-bottom:solid thin">n/a</td>
+              <td align="center" valign="middle" style="border-bottom:solid thin">n/a</td>
+              <td align="center" valign="middle" style="border-bottom:solid thin">n/a</td>
+              <td align="center" valign="middle" style="border-bottom:solid thin">0.735</td>
+              <td align="center" valign="middle" style="border-bottom:solid thin">0.715</td>
+              <td align="center" valign="middle" style="border-bottom:solid thin">0.715</td>
+            </tr>
+          </tbody>
+        </table>
+      </table-wrap>
+    </sec>
+    <fn-group>
+      <fn>
+        <p><bold>Disclaimer/Publisher&#x2019;s Note:</bold> The statements, opinions and data contained in all publications are solely those of the individual author(s) and contributor(s) and not of MDPI and/or the editor(s). MDPI and/or the editor(s) disclaim responsibility for any injury to people or property resulting from any ideas, methods, instructions or products referred to in the content.</p>
+      </fn>
+    </fn-group>
+  </back>
+</article>
