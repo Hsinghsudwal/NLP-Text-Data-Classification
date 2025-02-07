@@ -81,7 +81,7 @@ class Modelflow:
 
                 ## For Remote server only(DAGShub)
 
-                # remote_server_uri="https://dagshub.com/krishnaik06/mlflowexperiments.mlflow"
+                # remote_server_uri="https://dagshub.com/Hsinghsudwal/experiments.mlflow"
                 # mlflow.set_tracking_uri(remote_server_uri)
 
                 # tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
